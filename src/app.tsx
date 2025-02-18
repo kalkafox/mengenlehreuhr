@@ -209,6 +209,7 @@ function App() {
             <p>
               This is a digital representation of the{' '}
               <a
+                target='_blank'
                 className='text-neutral-400'
                 href='https://en.wikipedia.org/wiki/Mengenlehreuhr'>
                 <WikipediaHover text='Mengenlehreuhr' />
@@ -228,6 +229,9 @@ function App() {
             </p>
           </HoverCardContent>
         </HoverCard>
+        <a href='https://github.com/kalkafox/mengenlehreuhr' target='_blank'>
+          <Icon icon='mdi:github' width='24' height='24' />
+        </a>
       </div>
       <TimeSyncChecker />
     </>
