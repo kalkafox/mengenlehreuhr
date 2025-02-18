@@ -10,7 +10,7 @@ if (process.env.GH_REPO) {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: `/kalkafox.github.io/mengenlehreuhr`,
+  base: `mengenlehreuhr`,
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
