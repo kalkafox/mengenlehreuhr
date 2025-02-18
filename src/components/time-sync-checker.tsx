@@ -18,10 +18,9 @@ const TimeSyncChecker = () => {
         const response = await ky
           .get('https://worldtimeapi.org/api/ip')
           .json<TimeResponse>() // Using ky to make the request
-
-        const serverDateTime = DateTime.fromISO(response.utc_datetime)
-        const difference = serverDateTime.diffNow()
         const localDateTime = DateTime.now()
+        const serverDateTime = DateTime.fromISO(response.utc_datetime)
+        const difference = serverDateTime.diff(localDateTime)
 
         setLocalTime(localDateTime)
         setServerTime(serverDateTime)
