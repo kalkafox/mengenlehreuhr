@@ -1,0 +1,21 @@
+{
+  "toolbar.whatisthis.title": "これは何ですか？",
+  "toolbar.whatisthis.description_1": "これは、<wikiLink>Mengenlehreuhr</wikiLink> のデジタル表現であり、<motionLink>motion</motionLink>、<reactLink>React</reactLink>、<tailwindLink>Tailwind</tailwindLink> のようなオープンソースライブラリを使用しています。",
+  "hover.lightswitch": "時計をオン",
+  "hover.glow": "光をオン",
+  "hover.reducemotion": "動きを減らす",
+  "info.resetclock": "時計をリセット",
+  "generic.on": "オン",
+  "generic.off": "オフ",
+  "timesync.localtime": "ローカル時間",
+  "timesync.servertime": "サーバー時間",
+  "timesync.timedifference": "時間差",
+  "toolbar.timezone.search": "タイムゾーンを検索",
+  "toolbar.timezone.select": "タイムゾーンを選択",
+  "toast.clock_paused.title": "時計が停止しました！",
+  "toast.clock_paused.description": "リセットボタンを使用するまで、時計はこの状態のままになります。",
+  "toast.touch.info": "ここをタップして時計を操作！",
+  "toolbar.hour": "時",
+  "toolbar.minute": "分",
+  "toolbar.second": "秒"
+}

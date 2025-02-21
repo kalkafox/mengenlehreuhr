@@ -18,17 +18,22 @@ const WikipediaHover = ({ text }: { text: string }) => {
   if (!infoQuery.data) return
 
   return (
-    <HoverCard>
-      <HoverCardTrigger>{text}</HoverCardTrigger>
-      <HoverCardContent>
-        <img
-          src={infoQuery.data.originalimage.source}
-          className='rounded-lg'
-          alt={infoQuery.data.title}
-        />
-        {infoQuery.data.extract.slice(0, 200)}...
-      </HoverCardContent>
-    </HoverCard>
+    <a
+      target='_blank'
+      className='text-neutral-400'
+      href='https://en.wikipedia.org/wiki/Mengenlehreuhr'>
+      <HoverCard>
+        <HoverCardTrigger>{text}</HoverCardTrigger>
+        <HoverCardContent>
+          <img
+            src={infoQuery.data.originalimage.source}
+            className='rounded-lg'
+            alt={infoQuery.data.title}
+          />
+          {infoQuery.data.extract.slice(0, 200)}...
+        </HoverCardContent>
+      </HoverCard>
+    </a>
   )
 }
 

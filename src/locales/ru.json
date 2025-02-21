@@ -1,0 +1,21 @@
+{
+  "toolbar.whatisthis.title": "Что это?",
+  "toolbar.whatisthis.description_1": "Это цифровая версия <wikiLink>Mengenlehreuhr</wikiLink> с использованием библиотек с открытым исходным кодом, таких как <motionLink>motion</motionLink>, <reactLink>React</reactLink> и <tailwindLink>Tailwind</tailwindLink>.",
+  "hover.lightswitch": "Включить часы",
+  "hover.glow": "Включить свечение",
+  "hover.reducemotion": "Уменьшить анимацию",
+  "info.resetclock": "Сбросить часы",
+  "generic.on": "вкл",
+  "generic.off": "выкл",
+  "timesync.localtime": "Местное время",
+  "timesync.servertime": "Время сервера",
+  "timesync.timedifference": "Разница во времени",
+  "toolbar.timezone.search": "Поиск часового пояса",
+  "toolbar.timezone.select": "Выбрать часовой пояс",
+  "toast.clock_paused.title": "Часы на паузе!",
+  "toast.clock_paused.description": "Часы останутся в этом состоянии, пока вы не используете кнопки сброса.",
+  "toast.touch.info": "Нажмите здесь, чтобы управлять часами!",
+  "toolbar.hour": "Час",
+  "toolbar.minute": "Минута",
+  "toolbar.second": "Секунда"
+}

@@ -19,6 +19,16 @@
     U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+.glow-yellow {
+  box-shadow: 0 0 20px rgba(228, 195, 6, 0.5), 0 0 40px rgba(223, 183, 5, 0.4),
+    0 0 60px rgba(221, 190, 11, 0.3);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(228, 13, 6, 0.5), 0 0 40px rgba(223, 5, 5, 0.4),
+    0 0 60px rgba(221, 11, 11, 0.3);
+}
+
 :root {
   --background: hsl(0 0% 100%);
   --foreground: hsl(0 0% 3.9%);

@@ -1,11 +1,17 @@
-import { clockToggleAtom, reduceMotionAtom, timeAtom } from '../lib/atom'
-import { useAtom } from 'jotai'
+import {
+  clockToggleAtom,
+  glowAtom,
+  reduceMotionAtom,
+  timeAtom,
+} from '@/lib/atom'
+import { useAtom, useAtomValue } from 'jotai'
 import { useEffect } from 'react'
 
 const Mengenlehreuhr = () => {
   const [time] = useAtom(timeAtom)
   const [clockToggle] = useAtom(clockToggleAtom)
   const [reducedMotion] = useAtom(reduceMotionAtom)
+  const glow = useAtomValue(glowAtom)
 
   const hours = time.hour
   const minutes = time.minute
@@ -18,6 +24,9 @@ const Mengenlehreuhr = () => {
   const minuteRow1 = !clockToggle ? 0 : Math.floor(minutes / 5)
   const minuteRow2 = !clockToggle ? 0 : minutes % 5
 
+  const activeStyleRed = `bg-red-600 ${glow ? 'glow-red' : ''}`
+  const activeStyleYellow = `bg-yellow-500 ${glow ? 'glow-yellow' : ''}`
+
   useEffect(() => {
     console.log(`${secondLight ? 'tick' : 'tock'}`)
   }, [secondLight])
@@ -28,15 +37,16 @@ const Mengenlehreuhr = () => {
     <div className='flex flex-col items-center gap-2 p-4'>
       {/* Seconds Indicator */}
       <div
-        className={`w-8 h-8 rounded-full ${
+        className={`w-8 h-8 rounded-full  ${
           reducedMotion ? '' : 'transition-colors'
-        } ${secondLight ? 'bg-yellow-500' : 'bg-yellow-950'}`}
+        } ${secondLight ? activeStyleYellow : 'bg-yellow-950'}`}
       />
 
       {/* Hour Rows */}
       <div className='flex gap-1'>
         {[...Array(4)].map((_, i) => {
           const key = `hour1-${i}`
+
           return (
             <div
               key={key}
@@ -44,7 +54,7 @@ const Mengenlehreuhr = () => {
                 reducedMotion ? '' : 'transition-colors'
               } ${
                 i === 0 || i === 3 ? `rounded-${i === 0 ? 'l' : 'r'}-lg` : ''
-              } ${i < hourRow1 ? 'bg-red-600' : 'bg-red-950'}`}
+              } ${i < hourRow1 ? activeStyleRed : 'bg-red-950'}`}
             />
           )
         })}
@@ -59,7 +69,7 @@ const Mengenlehreuhr = () => {
                 reducedMotion ? '' : 'transition-colors'
               } ${
                 i === 0 || i === 3 ? `rounded-${i === 0 ? 'l' : 'r'}-lg` : ''
-              } ${i < hourRow2 ? 'bg-red-600' : 'bg-red-950'}`}
+              } ${i < hourRow2 ? activeStyleRed : 'bg-red-950'}`}
             />
           )
         })}
@@ -77,7 +87,9 @@ const Mengenlehreuhr = () => {
             ? 'bg-red-950'
             : 'bg-yellow-950'
           if (i < minuteRow1) {
-            colorClass = [2, 5, 8].includes(i) ? 'bg-red-500' : 'bg-yellow-500'
+            colorClass = [2, 5, 8].includes(i)
+              ? activeStyleRed
+              : activeStyleYellow
           }
 
           return (
@@ -100,7 +112,7 @@ const Mengenlehreuhr = () => {
                 reducedMotion ? '' : 'transition-colors'
               } ${
                 i === 0 || i === 3 ? `rounded-${i === 0 ? 'l' : 'r'}-lg` : ''
-              } ${i < minuteRow2 ? 'bg-yellow-500' : 'bg-yellow-950'}`}
+              } ${i < minuteRow2 ? activeStyleYellow : 'bg-yellow-950'}`}
             />
           )
         })}

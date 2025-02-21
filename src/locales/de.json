@@ -1,0 +1,21 @@
+{
+  "toolbar.whatisthis.title": "Was ist das?",
+  "toolbar.whatisthis.description_1": "Dies ist eine digitale Darstellung der <wikiLink>Mengenlehreuhr</wikiLink> mit Hilfe von Open-Source-Bibliotheken wie <motionLink>motion</motionLink>, <reactLink>React</reactLink> und <tailwindLink>Tailwind</tailwindLink>.",
+  "hover.lightswitch": "Uhr einschalten",
+  "hover.glow": "Glühen aktivieren",
+  "hover.reducemotion": "Bewegung reduzieren",
+  "info.resetclock": "Uhr zurücksetzen",
+  "generic.on": "ein",
+  "generic.off": "aus",
+  "timesync.localtime": "Ortszeit",
+  "timesync.servertime": "Serverzeit",
+  "timesync.timedifference": "Zeitunterschied",
+  "toolbar.timezone.search": "Zeitzone suchen",
+  "toolbar.timezone.select": "Zeitzone auswählen",
+  "toast.clock_paused.title": "Die Uhr ist pausiert!",
+  "toast.clock_paused.description": "Die Uhr bleibt in diesem Zustand, bis Sie die Reset-Tasten verwenden.",
+  "toast.touch.info": "Tippen Sie hier, um die Uhr zu steuern!",
+  "toolbar.hour": "Stunde",
+  "toolbar.minute": "Minute",
+  "toolbar.second": "Sekunde"
+}

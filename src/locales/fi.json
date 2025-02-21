@@ -1,0 +1,21 @@
+{
+  "toolbar.whatisthis.title": "Mikä tämä on?",
+  "toolbar.whatisthis.description_1": "Tämä on <wikiLink>Mengenlehreuhr</wikiLink>-kellon digitaalinen versio hyödyntäen avoimen lähdekoodin kirjastoja kuten <motionLink>motion</motionLink>, <reactLink>React</reactLink> ja <tailwindLink>Tailwind</tailwindLink>.",
+  "hover.lightswitch": "Käynnistä kello",
+  "hover.glow": "Ota hehku käyttöön",
+  "hover.reducemotion": "Vähennä liikettä",
+  "info.resetclock": "Nollaa kello",
+  "generic.on": "päällä",
+  "generic.off": "pois päältä",
+  "timesync.localtime": "Paikallinen aika",
+  "timesync.servertime": "Palvelinaika",
+  "timesync.timedifference": "Aikaero",
+  "toolbar.timezone.search": "Etsi aikavyöhyke",
+  "toolbar.timezone.select": "Valitse aikavyöhyke",
+  "toast.clock_paused.title": "Kello on pysäytetty!",
+  "toast.clock_paused.description": "Kello pysyy tässä tilassa, kunnes käytät nollauspainikkeita.",
+  "toast.touch.info": "Napauta tästä hallitaksesi kelloa!",
+  "toolbar.hour": "Tunti",
+  "toolbar.minute": "Minuutti",
+  "toolbar.second": "Sekunti"
+}

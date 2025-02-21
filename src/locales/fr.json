@@ -1,0 +1,21 @@
+{
+  "toolbar.whatisthis.title": "Qu'est-ce que c'est ?",
+  "toolbar.whatisthis.description_1": "Ceci est une représentation numérique de la <wikiLink>Mengenlehreuhr</wikiLink> avec l'aide de bibliothèques open-source comme <motionLink>motion</motionLink>, <reactLink>React</reactLink> et <tailwindLink>Tailwind</tailwindLink>.",
+  "hover.lightswitch": "Allumer l'horloge",
+  "hover.glow": "Activer la lueur",
+  "hover.reducemotion": "Réduire les animations",
+  "info.resetclock": "Réinitialiser l'horloge",
+  "generic.on": "activé",
+  "generic.off": "désactivé",
+  "timesync.localtime": "Heure locale",
+  "timesync.servertime": "Heure du serveur",
+  "timesync.timedifference": "Différence horaire",
+  "toolbar.timezone.search": "Rechercher un fuseau horaire",
+  "toolbar.timezone.select": "Sélectionner un fuseau horaire",
+  "toast.clock_paused.title": "L'horloge est en pause !",
+  "toast.clock_paused.description": "L'horloge restera dans cet état jusqu'à ce que vous utilisiez les boutons de réinitialisation.",
+  "toast.touch.info": "Touchez ici pour contrôler l'horloge !",
+  "toolbar.hour": "Heure",
+  "toolbar.minute": "Minute",
+  "toolbar.second": "Seconde"
+}

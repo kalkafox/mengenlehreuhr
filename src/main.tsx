@@ -4,6 +4,7 @@ import './index.css'
 import App from './app.tsx'
 import { ThemeProvider } from './components/theme-provider.tsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { Toaster } from './components/ui/toaster.tsx'
 
 const queryClient = new QueryClient()
 
@@ -17,6 +18,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
       <QueryClientProvider client={queryClient}>
+        <Toaster />
         <App />
       </QueryClientProvider>
     </ThemeProvider>

@@ -1,0 +1,21 @@
+{
+  "toolbar.whatisthis.title": "What is this?",
+  "toolbar.whatisthis.description_1": "This is a digital representation of the <wikiLink>Mengenlehreuhr</wikiLink> with the help of open-source libraries like <motionLink>motion</motionLink>, <reactLink>React</reactLink>, and <tailwindLink>Tailwind</tailwindLink>.",
+  "hover.lightswitch": "Turn clock",
+  "hover.glow": "Turn glow",
+  "hover.reducemotion": "Turn reduce motion",
+  "info.resetclock": "Reset clock",
+  "generic.on": "on",
+  "generic.off": "off",
+  "timesync.localtime": "Local Time",
+  "timesync.servertime": "Server Time",
+  "timesync.timedifference": "Time difference",
+  "toolbar.timezone.search": "Search timezone",
+  "toolbar.timezone.select": "Select timezone",
+  "toast.clock_paused.title": "Clock is paused!",
+  "toast.clock_paused.description": "The clock will remain in this state until you use the reset buttons.",
+  "toast.touch.info": "Tap here to control the clock!",
+  "toolbar.hour": "Hour",
+  "toolbar.minute": "Minute",
+  "toolbar.second": "Second"
+}

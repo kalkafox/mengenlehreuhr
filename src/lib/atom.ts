@@ -38,3 +38,9 @@ export const timezoneAtom = atom(clientTimezone)
 export const clockPauseAtom = atom(false)
 
 export const reduceMotionAtom = atomWithToggleAndStorage('reduceMotion')
+
+export const glowAtom = atomWithToggleAndStorage('glow')
+
+export const lightSwitchShowAtom = atom(false)
+
+export const languageAtom = atomWithStorage('language', 'en')

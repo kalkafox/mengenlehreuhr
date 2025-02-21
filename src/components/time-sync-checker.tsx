@@ -5,8 +5,10 @@ import { motion } from 'motion/react'
 import { DateTime, Duration } from 'luxon'
 import { Skeleton } from './ui/skeleton'
 import { useQuery } from '@tanstack/react-query'
+import { useTranslation } from 'react-i18next'
 
 const TimeSyncChecker = () => {
+  const { t } = useTranslation()
   const [localTime, setLocalTime] = useState<DateTime | null>(null)
   const [serverTime, setServerTime] = useState<DateTime | null>(null)
   const [timeDifference, setTimeDifference] = useState<Duration | null>(null)
@@ -35,18 +37,18 @@ const TimeSyncChecker = () => {
   })
 
   return (
-    <div className='max-w-xl mx-auto mt-10 p-4 bg-neutral-900 rounded-lg shadow-lg'>
+    <div className='max-w-xl mx-auto mt-4 p-4 bg-neutral-900 rounded-lg shadow-lg font-["Poppins"]'>
       {timeQuery.data ? (
         <motion.div style={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <div className='mb-4'>
             <div className='flex justify-center gap-2 text-gray-300'>
-              <span>Local Time:</span>
+              <span>{t('timesync.localtime')}:</span>
               <span className='font-bold'>
                 {localTime?.toFormat('HH:mm:ss.S')}
               </span>
             </div>
             <div className='flex justify-center gap-2 text-gray-300'>
-              <span>Server Time:</span>
+              <span>{t('timesync.servertime')}:</span>
               <span className='font-bold'>
                 {serverTime?.toFormat('HH:mm:ss.S')}
               </span>
@@ -61,7 +63,7 @@ const TimeSyncChecker = () => {
               }`}>
               {timeDifference.as('seconds') === 0
                 ? 'Times are perfectly in sync!'
-                : `Time difference: ${Math.abs(
+                : `${t('timesync.timedifference')}: ${Math.abs(
                     timeDifference.as('seconds'),
                   )}ms`}
             </div>

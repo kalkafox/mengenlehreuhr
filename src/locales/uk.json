@@ -1,0 +1,21 @@
+{
+  "toolbar.whatisthis.title": "Що це?",
+  "toolbar.whatisthis.description_1": "Це цифрова версія <wikiLink>Mengenlehreuhr</wikiLink> за допомогою бібліотек з відкритим кодом, таких як <motionLink>motion</motionLink>, <reactLink>React</reactLink> і <tailwindLink>Tailwind</tailwindLink>.",
+  "hover.lightswitch": "Увімкнути годинник",
+  "hover.glow": "Увімкнути світіння",
+  "hover.reducemotion": "Зменшити рух",
+  "info.resetclock": "Скинути годинник",
+  "generic.on": "увімкнено",
+  "generic.off": "вимкнено",
+  "timesync.localtime": "Місцевий час",
+  "timesync.servertime": "Час сервера",
+  "timesync.timedifference": "Різниця в часі",
+  "toolbar.timezone.search": "Пошук часового поясу",
+  "toolbar.timezone.select": "Вибрати часовий пояс",
+  "toast.clock_paused.title": "Годинник зупинено!",
+  "toast.clock_paused.description": "Годинник залишиться в цьому стані, доки ви не використаєте кнопки скидання.",
+  "toast.touch.info": "Натисніть тут, щоб керувати годинником!",
+  "toolbar.hour": "Година",
+  "toolbar.minute": "Хвилина",
+  "toolbar.second": "Секунда"
+}
