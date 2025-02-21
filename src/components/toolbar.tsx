@@ -63,6 +63,9 @@ const Toolbar = () => {
 
   const currentLanguage = languageNames[language as LanguageCode]
 
+  const toolbarWidthStyle =
+    isTouchDevice() && !tapRegistered ? tapNotifyWidth + 20 : 'auto'
+
   useEffect(() => {
     if (clockPause) {
       toast({
@@ -87,9 +90,11 @@ const Toolbar = () => {
     <div className='flex items-center justify-center'>
       <motion.div
         ref={toolbarRef}
+        style={{
+          width: toolbarWidthStyle,
+        }}
         animate={{
-          width:
-            isTouchDevice() && !tapRegistered ? tapNotifyWidth + 20 : 'auto',
+          width: toolbarWidthStyle,
         }}
         className='flex items-center justify-center gap-2 bg-neutral-900 rounded-lg p-4'>
         <LightSwitch />
