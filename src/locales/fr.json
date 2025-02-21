@@ -14,7 +14,7 @@
   "toolbar.timezone.select": "Sélectionner un fuseau horaire",
   "toast.clock_paused.title": "L'horloge est en pause !",
   "toast.clock_paused.description": "L'horloge restera dans cet état jusqu'à ce que vous utilisiez les boutons de réinitialisation.",
-  "toast.touch.info": "Touchez ici pour contrôler l'horloge !",
+  "toolbar.touch.info": "Touchez ici pour contrôler l'horloge !",
   "toolbar.hour": "Heure",
   "toolbar.minute": "Minute",
   "toolbar.second": "Seconde"

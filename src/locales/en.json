@@ -14,7 +14,7 @@
   "toolbar.timezone.select": "Select timezone",
   "toast.clock_paused.title": "Clock is paused!",
   "toast.clock_paused.description": "The clock will remain in this state until you use the reset buttons.",
-  "toast.touch.info": "Tap here to control the clock!",
+  "toolbar.touch.info": "Tap here to control the clock!",
   "toolbar.hour": "Hour",
   "toolbar.minute": "Minute",
   "toolbar.second": "Second"

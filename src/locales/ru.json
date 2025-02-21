@@ -14,7 +14,7 @@
   "toolbar.timezone.select": "Выбрать часовой пояс",
   "toast.clock_paused.title": "Часы на паузе!",
   "toast.clock_paused.description": "Часы останутся в этом состоянии, пока вы не используете кнопки сброса.",
-  "toast.touch.info": "Нажмите здесь, чтобы управлять часами!",
+  "toolbar.touch.info": "Нажмите здесь, чтобы управлять часами!",
   "toolbar.hour": "Час",
   "toolbar.minute": "Минута",
   "toolbar.second": "Секунда"

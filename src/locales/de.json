@@ -14,7 +14,7 @@
   "toolbar.timezone.select": "Zeitzone auswählen",
   "toast.clock_paused.title": "Die Uhr ist pausiert!",
   "toast.clock_paused.description": "Die Uhr bleibt in diesem Zustand, bis Sie die Reset-Tasten verwenden.",
-  "toast.touch.info": "Tippen Sie hier, um die Uhr zu steuern!",
+  "toolbar.touch.info": "Tippen Sie hier, um die Uhr zu steuern!",
   "toolbar.hour": "Stunde",
   "toolbar.minute": "Minute",
   "toolbar.second": "Sekunde"

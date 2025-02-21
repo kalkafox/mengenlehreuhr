@@ -14,7 +14,7 @@
   "toolbar.timezone.select": "Seleccionar zona horaria",
   "toast.clock_paused.title": "¡El reloj está en pausa!",
   "toast.clock_paused.description": "El reloj permanecerá en este estado hasta que utilices los botones de reinicio.",
-  "toast.touch.info": "¡Toca aquí para controlar el reloj!",
+  "toolbar.touch.info": "¡Toca aquí para controlar el reloj!",
   "toolbar.hour": "Hora",
   "toolbar.minute": "Minuto",
   "toolbar.second": "Segundo"

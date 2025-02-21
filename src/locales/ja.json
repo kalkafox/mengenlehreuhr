@@ -14,7 +14,7 @@
   "toolbar.timezone.select": "タイムゾーンを選択",
   "toast.clock_paused.title": "時計が停止しました！",
   "toast.clock_paused.description": "リセットボタンを使用するまで、時計はこの状態のままになります。",
-  "toast.touch.info": "ここをタップして時計を操作！",
+  "toolbar.touch.info": "ここをタップして時計を操作！",
   "toolbar.hour": "時",
   "toolbar.minute": "分",
   "toolbar.second": "秒"

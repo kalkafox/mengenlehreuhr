@@ -14,7 +14,7 @@
   "toolbar.timezone.select": "Valitse aikavyöhyke",
   "toast.clock_paused.title": "Kello on pysäytetty!",
   "toast.clock_paused.description": "Kello pysyy tässä tilassa, kunnes käytät nollauspainikkeita.",
-  "toast.touch.info": "Napauta tästä hallitaksesi kelloa!",
+  "toolbar.touch.info": "Napauta tästä hallitaksesi kelloa!",
   "toolbar.hour": "Tunti",
   "toolbar.minute": "Minuutti",
   "toolbar.second": "Sekunti"

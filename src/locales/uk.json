@@ -14,7 +14,7 @@
   "toolbar.timezone.select": "Вибрати часовий пояс",
   "toast.clock_paused.title": "Годинник зупинено!",
   "toast.clock_paused.description": "Годинник залишиться в цьому стані, доки ви не використаєте кнопки скидання.",
-  "toast.touch.info": "Натисніть тут, щоб керувати годинником!",
+  "toolbar.touch.info": "Натисніть тут, щоб керувати годинником!",
   "toolbar.hour": "Година",
   "toolbar.minute": "Хвилина",
   "toolbar.second": "Секунда"
