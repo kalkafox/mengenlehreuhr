@@ -1,14 +1,14 @@
+import { clockToggleAtom, lightSwitchShowAtom } from '@/lib/atom'
+import { isTouchDevice } from '@/lib/touch'
+import { useAtom, useAtomValue } from 'jotai'
 import { motion } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from './ui/tooltip'
-import { clockToggleAtom, lightSwitchShowAtom } from '@/lib/atom'
-import { useAtom, useAtomValue } from 'jotai'
-import { isTouchDevice } from '@/lib/touch'
-import { useTranslation } from 'react-i18next'
 
 const LightSwitch = () => {
   const { t } = useTranslation()
@@ -21,7 +21,7 @@ const LightSwitch = () => {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger>
-          <div className='h-10 w-4 outline-1 bg-[#101010] rounded-sm'>
+          <div className="h-10 w-4 outline-1 bg-[#101010] rounded-sm">
             <motion.div
               className={`h-8 w-4 relative cursor-pointer transition-colors ${
                 !clockToggle ? 'bg-neutral-900' : 'bg-neutral-200'
@@ -34,7 +34,8 @@ const LightSwitch = () => {
               animate={{
                 y: clockToggle ? 0 : 6,
               }}
-              onClick={() => setClockToggle((prev) => !prev)}></motion.div>
+              onClick={() => setClockToggle((prev) => !prev)}
+            ></motion.div>
           </div>
         </TooltipTrigger>
         <TooltipContent>

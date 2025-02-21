@@ -1,12 +1,20 @@
+import { useAtom, useSetAtom } from 'jotai'
+import { DateTime } from 'luxon'
 import { useEffect } from 'react'
 import Mengenlehreuhr from './components/mengenlehreur'
+import TimeSyncChecker from './components/time-sync-checker'
+import Toolbar from './components/toolbar'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from './components/ui/popover'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from './components/ui/tooltip'
-import { useAtom, useSetAtom } from 'jotai'
 import {
   clockPauseAtom,
   clockToggleAtom,
@@ -15,15 +23,7 @@ import {
   timeAtom,
   timezoneAtom,
 } from './lib/atom'
-import TimeSyncChecker from './components/time-sync-checker'
-import { DateTime } from 'luxon'
-import Toolbar from './components/toolbar'
 import { isTouchDevice } from './lib/touch'
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from './components/ui/popover'
 
 function App() {
   const [clockToggle] = useAtom(clockToggleAtom)
@@ -62,7 +62,7 @@ function App() {
           reduceMotion ? '' : 'transition-colors'
         } border-2 w-full h-full fixed -z-50`}
       />
-      <div className='flex items-center justify-center'>
+      <div className="flex items-center justify-center">
         {isTouchDevice() ? (
           <Popover onOpenChange={(e) => setLightSwitchShow(e)}>
             <PopoverTrigger>

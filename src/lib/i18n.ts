@@ -1,14 +1,14 @@
 import i18next from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
-import enTranslation from '@/locales/en.json'
-import frTranslation from '@/locales/fr.json'
 import deTranslation from '@/locales/de.json'
-import fiTranslation from '@/locales/fi.json'
+import enTranslation from '@/locales/en.json'
 import esTranslation from '@/locales/es.json'
+import fiTranslation from '@/locales/fi.json'
+import frTranslation from '@/locales/fr.json'
+import jaTranslation from '@/locales/ja.json'
 import ruTranslation from '@/locales/ru.json'
 import ukTranslation from '@/locales/uk.json'
-import jaTranslation from '@/locales/ja.json'
 
 export const languageNames = {
   en: 'English',

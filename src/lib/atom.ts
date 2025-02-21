@@ -1,13 +1,13 @@
 import { atom, WritableAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 
-import timezones from './timezones.json'
 import { DateTime } from 'luxon'
+import timezones from './timezones.json'
 
 export function atomWithToggleAndStorage(
   key: string,
   initialValue?: boolean,
-  storage?: any,
+  storage?: any
 ): WritableAtom<boolean, [boolean?], void> {
   const anAtom = atomWithStorage(key, initialValue, storage)
   const derivedAtom = atom(
@@ -15,7 +15,7 @@ export function atomWithToggleAndStorage(
     (get, set, nextValue?: boolean) => {
       const update = nextValue ?? !get(anAtom)
       void set(anAtom, update)
-    },
+    }
   )
 
   return derivedAtom as WritableAtom<boolean, [boolean?], void>
@@ -27,8 +27,8 @@ export const clockToggleAtom = atom(true)
 
 const clientTimezone = timezones.find((tz) =>
   tz.utc.find((s) =>
-    s.includes(Intl.DateTimeFormat().resolvedOptions().timeZone),
-  ),
+    s.includes(Intl.DateTimeFormat().resolvedOptions().timeZone)
+  )
 )!
 
 console.log(clientTimezone)

@@ -1,11 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-import { Icon } from '@iconify/react'
-import LightSwitch from './light-switch'
-import { Popover, PopoverContent, PopoverTrigger } from './ui/popover'
-import { motion } from 'motion/react'
-import { TimezoneCombobox } from './timezone-combobox'
-import { Slider } from './ui/slider'
-import { useAtom } from 'jotai'
+import { useToast } from '@/hooks/use-toast'
 import {
   clockPauseAtom,
   glowAtom,
@@ -14,21 +7,18 @@ import {
   timeAtom,
   timezoneAtom,
 } from '@/lib/atom'
-import { Separator } from './ui/separator'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from './ui/tooltip'
-import { Toggle } from './ui/toggle'
-import { DateTime } from 'luxon'
-import { HoverCard, HoverCardContent, HoverCardTrigger } from './ui/hover-card'
-import WikipediaHover from './wikipedia-hover'
+import { languageNames } from '@/lib/i18n'
 import { isTouchDevice } from '@/lib/touch'
-import { useToast } from '@/hooks/use-toast'
-import { ToastAction } from './ui/toast'
+import { Icon } from '@iconify/react'
+import { useAtom } from 'jotai'
+import { DateTime } from 'luxon'
+import { motion } from 'motion/react'
+import { useEffect, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
+import LightSwitch from './light-switch'
+import { TimezoneCombobox } from './timezone-combobox'
+import { HoverCard, HoverCardContent, HoverCardTrigger } from './ui/hover-card'
+import { Popover, PopoverContent, PopoverTrigger } from './ui/popover'
 import {
   Select,
   SelectContent,
@@ -36,7 +26,17 @@ import {
   SelectTrigger,
   SelectValue,
 } from './ui/select'
-import { languageNames } from '@/lib/i18n'
+import { Separator } from './ui/separator'
+import { Slider } from './ui/slider'
+import { ToastAction } from './ui/toast'
+import { Toggle } from './ui/toggle'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from './ui/tooltip'
+import WikipediaHover from './wikipedia-hover'
 
 type LanguageCode = keyof typeof languageNames
 
@@ -74,7 +74,8 @@ const Toolbar = () => {
         action: (
           <ToastAction
             onClick={() => setClockPause(false)}
-            altText={t('info.resetclock')}>
+            altText={t('info.resetclock')}
+          >
             {t('info.resetclock')}
           </ToastAction>
         ),
@@ -87,7 +88,7 @@ const Toolbar = () => {
   }, [language, i18n])
 
   return (
-    <div className='flex items-center justify-center'>
+    <div className="flex items-center justify-center">
       <motion.div
         ref={toolbarRef}
         style={{
@@ -96,21 +97,24 @@ const Toolbar = () => {
         animate={{
           width: toolbarWidthStyle,
         }}
-        className='flex items-center justify-center gap-2 bg-neutral-900 rounded-lg p-4'>
+        className="flex items-center justify-center gap-2 bg-neutral-900 rounded-lg p-4"
+      >
         <LightSwitch />
         <Popover
           onOpenChange={(e) => {
             console.log(e)
             setSettingsOpen(e)
-          }}>
-          <PopoverTrigger className='cursor-pointer'>
+          }}
+        >
+          <PopoverTrigger className="cursor-pointer">
             <motion.div
-              className='my-2'
+              className="my-2"
               onTap={() => setTapRegistered(true)}
               whileHover={{ rotateZ: settingsOpen ? 75 : 5 }}
-              animate={{ rotateZ: settingsOpen ? 75 : 0 }}>
+              animate={{ rotateZ: settingsOpen ? 75 : 0 }}
+            >
               <Icon
-                icon='material-symbols:settings'
+                icon="material-symbols:settings"
                 width={iconSize}
                 height={iconSize}
               />
@@ -132,17 +136,18 @@ const Toolbar = () => {
                     ease: 'easeInOut', // Easing function for smoothness
                   },
                 }}
-                className='absolute'>
+                className="absolute"
+              >
                 <Icon
-                  icon='guidance:up-arrow'
+                  icon="guidance:up-arrow"
                   width={iconSize}
                   height={iconSize}
                 />
               </motion.div>
             ) : null}
           </PopoverTrigger>
-          <PopoverContent className='w-auto'>
-            <div className='flex flex-col items-center gap-1'>
+          <PopoverContent className="w-auto">
+            <div className="flex flex-col items-center gap-1">
               <TimezoneCombobox />
               {t('toolbar.hour')}: {time.hour}
               <Slider
@@ -177,8 +182,8 @@ const Toolbar = () => {
                 max={60}
                 step={1}
               />
-              <Separator className='my-2' />
-              <div className='flex gap-2'>
+              <Separator className="my-2" />
+              <div className="flex gap-2">
                 <LightSwitch />
 
                 <TooltipProvider>
@@ -186,14 +191,15 @@ const Toolbar = () => {
                     <TooltipTrigger>
                       <motion.div animate={{ scale: reduceMotion ? 0.9 : 1 }}>
                         <Toggle
-                          className='cursor-pointer'
+                          className="cursor-pointer"
                           pressed={reduceMotion}
                           onPressedChange={(e) => {
                             setReduceMotion(e)
                           }}
-                          aria-label='Reduce motion'>
+                          aria-label="Reduce motion"
+                        >
                           <Icon
-                            icon='mdi:motion'
+                            icon="mdi:motion"
                             width={iconSize}
                             height={iconSize}
                           />
@@ -217,18 +223,20 @@ const Toolbar = () => {
                         animate={{
                           scale: clockPause ? 1 : 0.9,
                           opacity: clockPause ? 1 : 0.8,
-                        }}>
+                        }}
+                      >
                         <Toggle
                           disabled={!clockPause}
                           onPressedChange={() => {
                             setClockPause(false)
                             setTime(DateTime.now().setZone(timezone.utc[0]))
                           }}
-                          className='cursor-pointer'>
+                          className="cursor-pointer"
+                        >
                           <Icon
-                            icon='qlementine-icons:reset-16'
-                            width='16'
-                            height='16'
+                            icon="qlementine-icons:reset-16"
+                            width="16"
+                            height="16"
                           />
                         </Toggle>
                       </motion.div>
@@ -246,11 +254,12 @@ const Toolbar = () => {
                           onPressedChange={(e) => {
                             setGlow(e)
                           }}
-                          className='cursor-pointer'>
+                          className="cursor-pointer"
+                        >
                           <Icon
-                            icon='material-symbols:fluorescent'
-                            width='16'
-                            height='16'
+                            icon="material-symbols:fluorescent"
+                            width="16"
+                            height="16"
                           />
                         </Toggle>
                       </motion.div>
@@ -265,8 +274,9 @@ const Toolbar = () => {
                 <Select
                   onValueChange={(e) => {
                     setLanguage(e)
-                  }}>
-                  <SelectTrigger className='w-auto'>
+                  }}
+                >
+                  <SelectTrigger className="w-auto">
                     <SelectValue placeholder={currentLanguage} />
                   </SelectTrigger>
                   <SelectContent>
@@ -287,9 +297,10 @@ const Toolbar = () => {
               <motion.div
                 style={{ scale: 1 }}
                 whileHover={{ scale: infoOpen ? 1.5 : 1.1 }}
-                animate={{ scale: infoOpen ? 1.5 : 1 }}>
+                animate={{ scale: infoOpen ? 1.5 : 1 }}
+              >
                 <Icon
-                  icon='mingcute:question-fill'
+                  icon="mingcute:question-fill"
                   width={iconSize}
                   height={iconSize}
                 />
@@ -303,15 +314,17 @@ const Toolbar = () => {
           <HoverCard
             onOpenChange={(e) => {
               setInfoOpen(e)
-            }}>
+            }}
+          >
             <HoverCardTrigger>
               <motion.div
-                className='cursor-help'
+                className="cursor-help"
                 style={{ scale: 1 }}
                 animate={{ scale: infoOpen ? 1.5 : 1 }}
-                whileHover={{ scale: infoOpen ? 1.5 : 1.1 }}>
+                whileHover={{ scale: infoOpen ? 1.5 : 1.1 }}
+              >
                 <Icon
-                  icon='mingcute:question-fill'
+                  icon="mingcute:question-fill"
                   width={iconSize}
                   height={iconSize}
                 />
@@ -322,8 +335,8 @@ const Toolbar = () => {
             </HoverCardContent>
           </HoverCard>
         )}
-        <a href='https://github.com/kalkafox/mengenlehreuhr' target='_blank'>
-          <Icon icon='mdi:github' width={iconSize} height={iconSize} />
+        <a href="https://github.com/kalkafox/mengenlehreuhr" target="_blank">
+          <Icon icon="mdi:github" width={iconSize} height={iconSize} />
         </a>
         {isTouchDevice() ? (
           <motion.div
@@ -333,7 +346,8 @@ const Toolbar = () => {
               y: tapRegistered ? 40 : 30,
               opacity: tapRegistered ? 0 : 1,
             }}
-            className='absolute text-lg font-[Poppins]'>
+            className="absolute text-lg font-[Poppins]"
+          >
             {t('toolbar.touch.info')}
           </motion.div>
         ) : null}
@@ -345,25 +359,25 @@ const Toolbar = () => {
 const InfoSection = () => (
   <>
     <h1 className="font-['Poppins']">
-      <Trans i18nKey='toolbar.whatisthis.title' />
+      <Trans i18nKey="toolbar.whatisthis.title" />
     </h1>
     <p>
       <Trans
-        i18nKey='toolbar.whatisthis.description_1'
+        i18nKey="toolbar.whatisthis.description_1"
         components={{
-          wikiLink: <WikipediaHover text='Mengenlehreuhr' />,
+          wikiLink: <WikipediaHover text="Mengenlehreuhr" />,
           motionLink: (
-            <a className='text-neutral-400' href='https://motion.dev/'>
+            <a className="text-neutral-400" href="https://motion.dev/">
               motion
             </a>
           ),
           reactLink: (
-            <a className='text-neutral-400' href='https://react.dev'>
+            <a className="text-neutral-400" href="https://react.dev">
               React
             </a>
           ),
           tailwindLink: (
-            <a className='text-neutral-400' href='https://tailwindcss.com'>
+            <a className="text-neutral-400" href="https://tailwindcss.com">
               Tailwind
             </a>
           ),

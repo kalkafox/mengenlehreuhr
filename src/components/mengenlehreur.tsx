@@ -34,7 +34,7 @@ const Mengenlehreuhr = () => {
   useEffect(() => {})
 
   return (
-    <div className='flex flex-col items-center gap-2 p-4'>
+    <div className="flex flex-col items-center gap-2 p-4">
       {/* Seconds Indicator */}
       <div
         className={`w-8 h-8 rounded-full  ${
@@ -43,7 +43,7 @@ const Mengenlehreuhr = () => {
       />
 
       {/* Hour Rows */}
-      <div className='flex gap-1'>
+      <div className="flex gap-1">
         {[...Array(4)].map((_, i) => {
           const key = `hour1-${i}`
 
@@ -59,7 +59,7 @@ const Mengenlehreuhr = () => {
           )
         })}
       </div>
-      <div className='flex gap-1'>
+      <div className="flex gap-1">
         {[...Array(4)].map((_, i) => {
           const key = `hour2-${i}`
           return (
@@ -76,7 +76,7 @@ const Mengenlehreuhr = () => {
       </div>
 
       {/* Minute Rows */}
-      <div className='flex gap-1'>
+      <div className="flex gap-1">
         {[...Array(11)].map((_, i) => {
           const key = `minute1-${i}`
 
@@ -102,7 +102,7 @@ const Mengenlehreuhr = () => {
           )
         })}
       </div>
-      <div className='flex gap-1'>
+      <div className="flex gap-1">
         {[...Array(4)].map((_, i) => {
           const key = `minute2-${i}`
           return (
