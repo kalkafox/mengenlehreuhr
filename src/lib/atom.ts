@@ -47,7 +47,7 @@ export const glowAtom = atomWithToggleAndStorage('glow')
 export const lightSwitchShowAtom = atom(false)
 
 export const languageAtom = atomWithStorage(
-  'interface_language',
+  'interface_language_2',
   i18next.language
 )
 
