@@ -1,0 +1,23 @@
+{
+  "toolbar.whatisthis.title": "이게 뭐죠?",
+  "toolbar.whatisthis.description_1": "이것은 <wikiLink>Mengenlehreuhr</wikiLink>의 디지털 표현으로, <motionLink>motion</motionLink>, <reactLink>React</reactLink>, <tailwindLink>Tailwind</tailwindLink>와 같은 오픈 소스 라이브러리를 사용했습니다.",
+  "toolbar.whatisthis.why": "<youtubeVideo>LEMMiNO의 영상</youtubeVideo>에서 <wikiLink>Kryptos Ciphers</wikiLink>에 대해 이야기하는 데서 큰 영감을 받았습니다. 특히 이 시계에 대해 언급합니다. 재미로 하려고 한 것이니 너무 판단하지 말아주세요.",
+  "hover.lightswitch": "시계 켜기",
+  "hover.glow": "발광 켜기",
+  "hover.reducemotion": "모션 감소 켜기",
+  "info.resetclock": "시계 초기화",
+  "generic.on": "켜짐",
+  "generic.off": "꺼짐",
+  "generic.why": "왜요?",
+  "timesync.localtime": "지역 시간",
+  "timesync.servertime": "서버 시간",
+  "timesync.timedifference": "시간 차이",
+  "toolbar.timezone.search": "시간대 검색",
+  "toolbar.timezone.select": "시간대 선택",
+  "toast.clock_paused.title": "시계가 일시 정지되었습니다!",
+  "toast.clock_paused.description": "초기화 버튼을 사용할 때까지 시계는 이 상태로 유지됩니다.",
+  "toolbar.touch.info": "여기를 눌러 시계를 제어하세요!",
+  "toolbar.hour": "시",
+  "toolbar.minute": "분",
+  "toolbar.second": "초"
+}

@@ -1,5 +1,7 @@
+import { fontAtom } from '@/lib/atom'
 import { TimeResponse } from '@/types/time-sync'
 import { useQuery } from '@tanstack/react-query'
+import { useAtomValue } from 'jotai'
 import ky from 'ky'
 import { DateTime, Duration } from 'luxon'
 import { motion } from 'motion/react'
@@ -9,6 +11,9 @@ import { Skeleton } from './ui/skeleton'
 
 const TimeSyncChecker = () => {
   const { t } = useTranslation()
+
+  const font = useAtomValue(fontAtom)
+
   const [localTime, setLocalTime] = useState<DateTime | null>(null)
   const [serverTime, setServerTime] = useState<DateTime | null>(null)
   const [timeDifference, setTimeDifference] = useState<Duration | null>(null)
@@ -37,7 +42,9 @@ const TimeSyncChecker = () => {
   })
 
   return (
-    <div className='max-w-xl mx-auto mt-4 p-4 bg-neutral-900/80 rounded-lg shadow-lg font-["Poppins"]'>
+    <div
+      className={`max-w-xl mx-auto mt-4 p-4 bg-neutral-900/80 rounded-lg shadow-lg font-["${font}"]`}
+    >
       {timeQuery.data ? (
         <motion.div style={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <div className="mb-4">

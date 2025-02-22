@@ -55,7 +55,7 @@ function App() {
     appScale.set(1)
 
     return () => unsubscribe()
-  }, [appOpacity, preload])
+  }, [appOpacity, preload, appScale])
 
   useEffect(() => {
     console.log(clockPause)

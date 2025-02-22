@@ -48,3 +48,5 @@ export const languageAtom = atomWithStorage(
   'interface_language',
   i18next.language
 )
+
+export const fontAtom = atom('Inter_Variable')

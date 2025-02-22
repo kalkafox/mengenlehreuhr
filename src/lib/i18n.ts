@@ -9,6 +9,7 @@ import fiTranslation from '@/locales/fi.json'
 import frTranslation from '@/locales/fr.json'
 import idTranslation from '@/locales/id.json'
 import jaTranslation from '@/locales/ja.json'
+import koTranslation from '@/locales/ko.json'
 import ruTranslation from '@/locales/ru.json'
 import ukTranslation from '@/locales/uk.json'
 import viTranslation from '@/locales/vi.json'
@@ -21,6 +22,7 @@ export const languageNames = {
   fr: 'Français',
   id: 'Bahasa Indonesia',
   ja: '日本語',
+  ko: '한국어',
   ru: 'Русский',
   uk: 'Українська',
   vi: 'Tiếng Việt',
@@ -31,15 +33,16 @@ i18next
   .use(LanguageDetector)
   .init({
     resources: {
-      en: { translation: enTranslation },
-      fr: { translation: frTranslation },
       de: { translation: deTranslation },
-      fi: { translation: fiTranslation },
+      en: { translation: enTranslation },
       es: { translation: esTranslation },
+      fi: { translation: fiTranslation },
+      fr: { translation: frTranslation },
+      id: { translation: idTranslation },
+      ja: { translation: jaTranslation },
+      ko: { translation: koTranslation },
       ru: { translation: ruTranslation },
       uk: { translation: ukTranslation },
-      ja: { translation: jaTranslation },
-      id: { translation: idTranslation },
       vi: { translation: viTranslation },
     },
     supportedLngs: ['de', 'en', 'es', 'fi', 'fr', 'id', 'ja', 'ru', 'uk', 'vi'],

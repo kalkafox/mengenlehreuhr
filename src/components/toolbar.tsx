@@ -1,6 +1,7 @@
 import { useToast } from '@/hooks/use-toast'
 import {
   clockPauseAtom,
+  fontAtom,
   glowAtom,
   languageAtom,
   reduceMotionAtom,
@@ -10,7 +11,7 @@ import {
 import { languageNames } from '@/lib/i18n'
 import { isTouchDevice } from '@/lib/touch'
 import { Icon } from '@iconify/react'
-import { useAtom } from 'jotai'
+import { useAtom, useAtomValue } from 'jotai'
 import { DateTime } from 'luxon'
 import { motion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
@@ -53,6 +54,7 @@ const Toolbar = () => {
   const [timezone] = useAtom(timezoneAtom)
   const [glow, setGlow] = useAtom(glowAtom)
   const [language, setLanguage] = useAtom(languageAtom)
+  const [font, setFont] = useAtom(fontAtom)
 
   const [settingsOpen, setSettingsOpen] = useState(false)
   const [infoOpen, setInfoOpen] = useState(false)
@@ -86,7 +88,14 @@ const Toolbar = () => {
 
   useEffect(() => {
     i18n.changeLanguage(language)
-  }, [language, i18n])
+    setFont(
+      language === 'ko'
+        ? 'Noto_Sans_KR_Variable'
+        : language === 'ja'
+          ? 'Noto_Sans_JP_Variable'
+          : 'Inter_Variable'
+    )
+  }, [language, i18n, setFont])
 
   return (
     <div className="flex items-center justify-center">
@@ -349,7 +358,7 @@ const Toolbar = () => {
               y: tapRegistered ? 40 : 30,
               opacity: tapRegistered ? 0 : 1,
             }}
-            className="absolute text-lg font-[Poppins]"
+            className={`absolute text-lg font-["${font}"]`}
           >
             {t('toolbar.touch.info')}
           </motion.div>
@@ -361,10 +370,11 @@ const Toolbar = () => {
 
 const InfoSection = () => {
   const [moreInfo, setMoreInfo] = useState(false)
+  const font = useAtomValue(fontAtom)
 
   return (
     <>
-      <h1 className="font-['Poppins'] text-lg font-bold">
+      <h1 className={`font-['Noto_Sans_JP_Variable'] text-lg font-bold`}>
         <Trans i18nKey="toolbar.whatisthis.title" />
       </h1>
       <Separator />
