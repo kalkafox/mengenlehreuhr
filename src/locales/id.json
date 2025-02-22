@@ -1,0 +1,23 @@
+{
+  "toolbar.whatisthis.title": "Apa ini?",
+  "toolbar.whatisthis.description_1": "Ini adalah representasi digital dari <wikiLink>Mengenlehreuhr</wikiLink> dengan bantuan pustaka sumber terbuka seperti <motionLink>motion</motionLink>, <reactLink>React</reactLink>, dan <tailwindLink>Tailwind</tailwindLink>.",
+  "toolbar.whatisthis.why": "Saya sangat terinspirasi oleh <youtubeVideo>video LEMMiNO</youtubeVideo> tentang <wikiLink>Kryptos Ciphers</wikiLink>, yang secara khusus menyebut jam ini. Saya melakukannya hanya untuk bersenang-senang, jadi jangan menghakimi saya.",
+  "hover.lightswitch": "Nyalakan jam",
+  "hover.glow": "Nyalakan cahaya",
+  "hover.reducemotion": "Nyalakan pengurangan gerakan",
+  "info.resetclock": "Atur ulang jam",
+  "generic.on": "nyala",
+  "generic.off": "mati",
+  "generic.why": "Mengapa?",
+  "timesync.localtime": "Waktu Lokal",
+  "timesync.servertime": "Waktu Server",
+  "timesync.timedifference": "Perbedaan waktu",
+  "toolbar.timezone.search": "Cari zona waktu",
+  "toolbar.timezone.select": "Pilih zona waktu",
+  "toast.clock_paused.title": "Jam dijeda!",
+  "toast.clock_paused.description": "Jam akan tetap dalam keadaan ini sampai Anda menggunakan tombol reset.",
+  "toolbar.touch.info": "Ketuk di sini untuk mengontrol jam!",
+  "toolbar.hour": "Jam",
+  "toolbar.minute": "Menit",
+  "toolbar.second": "Detik"
+}

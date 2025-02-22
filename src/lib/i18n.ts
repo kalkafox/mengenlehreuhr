@@ -7,19 +7,23 @@ import enTranslation from '@/locales/en.json'
 import esTranslation from '@/locales/es.json'
 import fiTranslation from '@/locales/fi.json'
 import frTranslation from '@/locales/fr.json'
+import idTranslation from '@/locales/id.json'
 import jaTranslation from '@/locales/ja.json'
 import ruTranslation from '@/locales/ru.json'
 import ukTranslation from '@/locales/uk.json'
+import viTranslation from '@/locales/vi.json'
 
 export const languageNames = {
-  en: 'English',
-  fr: 'Français',
   de: 'Deutsch',
-  fi: 'Suomi',
+  en: 'English',
   es: 'Español',
+  fi: 'Suomi',
+  fr: 'Français',
+  id: 'Bahasa Indonesia',
+  ja: '日本語',
   ru: 'Русский',
   uk: 'Українська',
-  ja: '日本語',
+  vi: 'Tiếng Việt',
 }
 
 i18next
@@ -35,7 +39,12 @@ i18next
       ru: { translation: ruTranslation },
       uk: { translation: ukTranslation },
       ja: { translation: jaTranslation },
+      id: { translation: idTranslation },
+      vi: { translation: viTranslation },
     },
+    supportedLngs: ['de', 'en', 'es', 'fi', 'fr', 'id', 'ja', 'ru', 'uk', 'vi'],
     lng: 'en',
     fallbackLng: 'en',
   })
+
+export default i18next

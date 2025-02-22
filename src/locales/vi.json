@@ -1,0 +1,23 @@
+{
+  "toolbar.whatisthis.title": "Đây là gì?",
+  "toolbar.whatisthis.description_1": "Đây là một biểu diễn kỹ thuật số của <wikiLink>Mengenlehreuhr</wikiLink> với sự trợ giúp của các thư viện mã nguồn mở như <motionLink>motion</motionLink>, <reactLink>React</reactLink>, và <tailwindLink>Tailwind</tailwindLink>.",
+  "toolbar.whatisthis.why": "Tôi bị ảnh hưởng mạnh mẽ bởi video của <youtubeVideo>LEMMiNO</youtubeVideo> về chủ đề <wikiLink>Kryptos Ciphers</wikiLink>, video đề cập đến chiếc đồng hồ này đặc biệt. Tôi chủ yếu làm điều này để giải trí, đừng phán xét tôi.",
+  "hover.lightswitch": "Bật đồng hồ",
+  "hover.glow": "Bật ánh sáng",
+  "hover.reducemotion": "Giảm chuyển động",
+  "info.resetclock": "Đặt lại đồng hồ",
+  "generic.on": "bật",
+  "generic.off": "tắt",
+  "generic.why": "Tại sao?",
+  "timesync.localtime": "Giờ địa phương",
+  "timesync.servertime": "Giờ máy chủ",
+  "timesync.timedifference": "Chênh lệch giờ",
+  "toolbar.timezone.search": "Tìm kiếm múi giờ",
+  "toolbar.timezone.select": "Chọn múi giờ",
+  "toast.clock_paused.title": "Đồng hồ đã tạm dừng!",
+  "toast.clock_paused.description": "Đồng hồ sẽ ở trạng thái này cho đến khi bạn sử dụng các nút đặt lại.",
+  "toolbar.touch.info": "Nhấn vào đây để điều khiển đồng hồ!",
+  "toolbar.hour": "Giờ",
+  "toolbar.minute": "Phút",
+  "toolbar.second": "Giây"
+}

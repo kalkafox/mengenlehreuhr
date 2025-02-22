@@ -2,6 +2,7 @@ import { atom, WritableAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 
 import { DateTime } from 'luxon'
+import i18next from './i18n'
 import timezones from './timezones.json'
 
 export function atomWithToggleAndStorage(
@@ -43,4 +44,7 @@ export const glowAtom = atomWithToggleAndStorage('glow')
 
 export const lightSwitchShowAtom = atom(false)
 
-export const languageAtom = atomWithStorage('language', 'en')
+export const languageAtom = atomWithStorage(
+  'interface_language',
+  i18next.language
+)
