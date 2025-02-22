@@ -1,6 +1,8 @@
 import { useAtom, useSetAtom } from 'jotai'
 import { DateTime } from 'luxon'
+import { motion, useSpring } from 'motion/react'
 import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import Mengenlehreuhr from './components/mengenlehreur'
 import TimeSyncChecker from './components/time-sync-checker'
 import Toolbar from './components/toolbar'
@@ -26,6 +28,7 @@ import {
 import { isTouchDevice } from './lib/touch'
 
 function App() {
+  const { i18n } = useTranslation()
   const [clockToggle] = useAtom(clockToggleAtom)
   const [timezone] = useAtom(timezoneAtom)
   const [clockPause] = useAtom(clockPauseAtom)
@@ -33,61 +36,87 @@ function App() {
   const [time, setTime] = useAtom(timeAtom)
   const setLightSwitchShow = useSetAtom(lightSwitchShowAtom)
 
+  const appOpacity = useSpring(0)
+  const appScale = useSpring(1)
+  const preload = document.getElementById('preload')!
+
   useEffect(() => {
-    document.getElementById('preload')?.remove()
-  }, [])
+    const unsubscribe = appOpacity.on('change', (e) => {
+      if (e === 1) {
+        preload.remove()
+      }
+    })
+
+    if (!preload) return
+
+    preload.style.opacity = '0'
+    appOpacity.set(1)
+
+    return () => unsubscribe()
+  }, [appOpacity, preload])
 
   useEffect(() => {
     console.log(clockPause)
     if (!clockToggle && clockPause) {
       return
     } else {
-      const dt = DateTime.now().setZone(timezone.utc[0])
+      const dt = DateTime.local({ locale: i18n.language }).setZone(
+        timezone.utc[0]
+      )
       setTime(dt)
     }
 
     const interval = setInterval(() => {
-      setTime(DateTime.now().setZone(timezone.utc[0]))
+      setTime(
+        DateTime.local({ locale: i18n.language }).setZone(timezone.utc[0])
+      )
     }, 1000)
     if (clockPause) {
       clearInterval(interval)
     }
     return () => clearInterval(interval)
-  }, [clockToggle, setTime, timezone.utc, clockPause])
+  }, [clockToggle, setTime, timezone.utc, clockPause, i18n.language])
 
   return (
-    <>
+    <motion.div
+      onAnimationComplete={(v) => {
+        console.log(v)
+      }}
+      style={{ opacity: appOpacity, scale: appScale }}
+    >
       <div
         className={`${clockPause ? 'border-blue-500' : ''} ${
           reduceMotion ? '' : 'transition-colors'
-        } border-2 w-full h-full fixed -z-50`}
+        } border-2 w-full h-full fixed -z-50 circuit-board`}
       />
       <div className="flex items-center justify-center">
-        {isTouchDevice() ? (
-          <Popover onOpenChange={(e) => setLightSwitchShow(e)}>
-            <PopoverTrigger>
-              <Mengenlehreuhr />
-            </PopoverTrigger>
-            <PopoverContent>
-              {time.toFormat('HH:mm:ss a (ZZZZZ)')}
-            </PopoverContent>
-          </Popover>
-        ) : (
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger>
+        <div className="bg-neutral-950 m-4 rounded-lg">
+          {isTouchDevice() ? (
+            <Popover onOpenChange={(e) => setLightSwitchShow(e)}>
+              <PopoverTrigger>
                 <Mengenlehreuhr />
-              </TooltipTrigger>
-              <TooltipContent>
+              </PopoverTrigger>
+              <PopoverContent>
                 {time.toFormat('HH:mm:ss a (ZZZZZ)')}
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
-        )}
+              </PopoverContent>
+            </Popover>
+          ) : (
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Mengenlehreuhr />
+                </TooltipTrigger>
+                <TooltipContent>
+                  {time.toFormat('HH:mm:ss a (ZZZZZ)')}
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          )}
+        </div>
       </div>
       <Toolbar />
       <TimeSyncChecker />
-    </>
+    </motion.div>
   )
 }
 

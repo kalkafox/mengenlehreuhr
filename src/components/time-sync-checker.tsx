@@ -20,7 +20,7 @@ const TimeSyncChecker = () => {
         const response = await ky
           .get('https://worldtimeapi.org/api/ip')
           .json<TimeResponse>() // Using ky to make the request
-        const localDateTime = DateTime.now()
+        const localDateTime = DateTime.local()
         const serverDateTime = DateTime.fromISO(response.utc_datetime)
         const difference = serverDateTime.diff(localDateTime)
 
@@ -37,7 +37,7 @@ const TimeSyncChecker = () => {
   })
 
   return (
-    <div className='max-w-xl mx-auto mt-4 p-4 bg-neutral-900 rounded-lg shadow-lg font-["Poppins"]'>
+    <div className='max-w-xl mx-auto mt-4 p-4 bg-neutral-900/80 rounded-lg shadow-lg font-["Poppins"]'>
       {timeQuery.data ? (
         <motion.div style={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <div className="mb-4">

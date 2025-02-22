@@ -17,6 +17,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Trans, useTranslation } from 'react-i18next'
 import LightSwitch from './light-switch'
 import { TimezoneCombobox } from './timezone-combobox'
+import ToolbarButton from './toolbar-button'
 import { HoverCard, HoverCardContent, HoverCardTrigger } from './ui/hover-card'
 import { Popover, PopoverContent, PopoverTrigger } from './ui/popover'
 import {
@@ -99,7 +100,6 @@ const Toolbar = () => {
         }}
         className="flex items-center justify-center gap-2 bg-neutral-900 rounded-lg p-4"
       >
-        <LightSwitch />
         <Popover
           onOpenChange={(e) => {
             console.log(e)
@@ -182,6 +182,7 @@ const Toolbar = () => {
                 max={60}
                 step={1}
               />
+              {time.toLocaleString()}
               <Separator className="my-2" />
               <div className="flex gap-2">
                 <LightSwitch />
@@ -335,9 +336,11 @@ const Toolbar = () => {
             </HoverCardContent>
           </HoverCard>
         )}
-        <a href="https://github.com/kalkafox/mengenlehreuhr" target="_blank">
-          <Icon icon="mdi:github" width={iconSize} height={iconSize} />
-        </a>
+        <ToolbarButton>
+          <a href="https://github.com/kalkafox/mengenlehreuhr" target="_blank">
+            <Icon icon="mdi:github" width={iconSize} height={iconSize} />
+          </a>
+        </ToolbarButton>
         {isTouchDevice() ? (
           <motion.div
             ref={tapRef}
@@ -356,35 +359,67 @@ const Toolbar = () => {
   )
 }
 
-const InfoSection = () => (
-  <>
-    <h1 className="font-['Poppins']">
-      <Trans i18nKey="toolbar.whatisthis.title" />
-    </h1>
-    <p>
-      <Trans
-        i18nKey="toolbar.whatisthis.description_1"
-        components={{
-          wikiLink: <WikipediaHover text="Mengenlehreuhr" />,
-          motionLink: (
-            <a className="text-neutral-400" href="https://motion.dev/">
-              motion
-            </a>
-          ),
-          reactLink: (
-            <a className="text-neutral-400" href="https://react.dev">
-              React
-            </a>
-          ),
-          tailwindLink: (
-            <a className="text-neutral-400" href="https://tailwindcss.com">
-              Tailwind
-            </a>
-          ),
-        }}
-      />
-    </p>
-  </>
-)
+const InfoSection = () => {
+  const [moreInfo, setMoreInfo] = useState(false)
+
+  return (
+    <>
+      <h1 className="font-['Poppins'] text-lg font-bold">
+        <Trans i18nKey="toolbar.whatisthis.title" />
+      </h1>
+      <Separator />
+      <p>
+        <Trans
+          i18nKey="toolbar.whatisthis.description_1"
+          components={{
+            wikiLink: <WikipediaHover text="Mengenlehreuhr" />,
+            motionLink: (
+              <a className="text-neutral-400" href="https://motion.dev/">
+                motion
+              </a>
+            ),
+            reactLink: (
+              <a className="text-neutral-400" href="https://react.dev">
+                React
+              </a>
+            ),
+            tailwindLink: (
+              <a className="text-neutral-400" href="https://tailwindcss.com">
+                Tailwind
+              </a>
+            ),
+          }}
+        />
+        {moreInfo ? (
+          <>
+            {' '}
+            <Trans
+              i18nKey="toolbar.whatisthis.why"
+              components={{
+                youtubeVideo: (
+                  <a
+                    className="text-neutral-400"
+                    href="https://youtu.be/jVpsLMCIB0Y"
+                  ></a>
+                ),
+                wikiLink: <WikipediaHover text="Kryptos" />,
+              }}
+            />
+          </>
+        ) : (
+          <>
+            {' '}
+            <button
+              className="text-neutral-500 text-sm cursor-pointer"
+              onClick={() => setMoreInfo(true)}
+            >
+              <Trans i18nKey="generic.why" />
+            </button>
+          </>
+        )}
+      </p>
+    </>
+  )
+}
 
 export default Toolbar
