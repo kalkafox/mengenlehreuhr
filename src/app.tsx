@@ -37,7 +37,7 @@ function App() {
   const setLightSwitchShow = useSetAtom(lightSwitchShowAtom)
 
   const appOpacity = useSpring(0)
-  const appScale = useSpring(1)
+  const appScale = useSpring(1, { bounce: 0 })
   const preload = document.getElementById('preload')!
 
   useEffect(() => {
@@ -51,6 +51,8 @@ function App() {
 
     preload.style.opacity = '0'
     appOpacity.set(1)
+    appScale.jump(0.95)
+    appScale.set(1)
 
     return () => unsubscribe()
   }, [appOpacity, preload])
@@ -82,12 +84,13 @@ function App() {
       onAnimationComplete={(v) => {
         console.log(v)
       }}
+      className="w-full h-full fixed"
       style={{ opacity: appOpacity, scale: appScale }}
     >
       <div
-        className={`${clockPause ? 'border-blue-500' : ''} ${
+        className={`${clockPause ? 'border-blue-500 border-2' : ''} ${
           reduceMotion ? '' : 'transition-colors'
-        } border-2 w-full h-full fixed -z-50 circuit-board`}
+        } w-full h-full fixed -z-50 circuit-board`}
       />
       <div className="flex items-center justify-center">
         <div className="bg-neutral-950 m-4 rounded-lg">
