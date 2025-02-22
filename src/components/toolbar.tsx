@@ -374,7 +374,7 @@ const InfoSection = () => {
 
   return (
     <>
-      <h1 className={`font-['Noto_Sans_JP_Variable'] text-lg font-bold`}>
+      <h1 className={`font-["${font}"] text-lg font-bold`}>
         <Trans i18nKey="toolbar.whatisthis.title" />
       </h1>
       <Separator />
