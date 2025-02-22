@@ -1,9 +1,11 @@
-import { atom, WritableAtom } from 'jotai'
+import { atom, createStore, WritableAtom } from 'jotai'
 import { atomWithStorage } from 'jotai/utils'
 
 import { DateTime } from 'luxon'
 import i18next from './i18n'
 import timezones from './timezones.json'
+
+export const store = createStore()
 
 export function atomWithToggleAndStorage(
   key: string,

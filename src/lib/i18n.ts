@@ -13,6 +13,15 @@ import koTranslation from '@/locales/ko.json'
 import ruTranslation from '@/locales/ru.json'
 import ukTranslation from '@/locales/uk.json'
 import viTranslation from '@/locales/vi.json'
+import { languageAtom, store } from './atom'
+
+const languageDetector = new LanguageDetector()
+
+const language = languageDetector.detect()
+
+if (language && !Array.isArray(language)) {
+  store.set(languageAtom, language)
+}
 
 export const languageNames = {
   de: 'Deutsch',
