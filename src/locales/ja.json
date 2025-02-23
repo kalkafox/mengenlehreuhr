@@ -9,6 +9,8 @@
   "generic.on": "オン",
   "generic.off": "オフ",
   "generic.why": "なぜ？",
+  "widget.kitsune.congrats": "おめでとうございます！ランダムで狐が贈られました！",
+  "widget.kitsune.loading": "一度読み込まれたら、うまくいけば…",
   "timesync.localtime": "ローカル時間",
   "timesync.servertime": "サーバー時間",
   "timesync.timedifference": "時間差",

@@ -1,8 +1,9 @@
 import { useAtom, useSetAtom } from 'jotai'
 import { DateTime } from 'luxon'
-import { motion, useSpring } from 'motion/react'
+import { AnimatePresence, motion, useSpring } from 'motion/react'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import Kitsune from './components/kitsune'
 import Mengenlehreuhr from './components/mengenlehreur'
 import TimeSyncChecker from './components/time-sync-checker'
 import Toolbar from './components/toolbar'
@@ -20,6 +21,8 @@ import {
 import {
   clockPauseAtom,
   clockToggleAtom,
+  fontAtom,
+  languageAtom,
   lightSwitchShowAtom,
   reduceMotionAtom,
   timeAtom,
@@ -35,9 +38,12 @@ function App() {
   const [reduceMotion] = useAtom(reduceMotionAtom)
   const [time, setTime] = useAtom(timeAtom)
   const setLightSwitchShow = useSetAtom(lightSwitchShowAtom)
+  const [, setFont] = useAtom(fontAtom)
+  const [language] = useAtom(languageAtom)
 
   const appOpacity = useSpring(0)
   const appScale = useSpring(1, { bounce: 0 })
+
   const preload = document.getElementById('preload')!
 
   useEffect(() => {
@@ -58,7 +64,6 @@ function App() {
   }, [appOpacity, preload, appScale])
 
   useEffect(() => {
-    console.log(clockPause)
     if (!clockToggle && clockPause) {
       return
     } else {
@@ -78,6 +83,16 @@ function App() {
     }
     return () => clearInterval(interval)
   }, [clockToggle, setTime, timezone.utc, clockPause, i18n.language])
+
+  useEffect(() => {
+    setFont(
+      language === 'ko'
+        ? 'Noto Sans KR Variable'
+        : language === 'ja'
+          ? 'Murecho'
+          : 'Inter Variable'
+    )
+  }, [language, setFont])
 
   return (
     <motion.div
@@ -119,6 +134,14 @@ function App() {
       </div>
       <Toolbar />
       <TimeSyncChecker />
+
+      <AnimatePresence>
+        {language === 'ja' ? (
+          <div className="bottom-0 fixed ">
+            <Kitsune />
+          </div>
+        ) : null}
+      </AnimatePresence>
     </motion.div>
   )
 }

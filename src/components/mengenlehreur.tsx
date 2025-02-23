@@ -5,7 +5,6 @@ import {
   timeAtom,
 } from '@/lib/atom'
 import { useAtom, useAtomValue } from 'jotai'
-import { useEffect } from 'react'
 
 const Mengenlehreuhr = () => {
   const [time] = useAtom(timeAtom)
@@ -26,12 +25,6 @@ const Mengenlehreuhr = () => {
 
   const activeStyleRed = `bg-red-600 ${glow ? 'glow-red' : ''}`
   const activeStyleYellow = `bg-yellow-500 ${glow ? 'glow-yellow' : ''}`
-
-  useEffect(() => {
-    console.log(`${secondLight ? 'tick' : 'tock'}`)
-  }, [secondLight])
-
-  useEffect(() => {})
 
   return (
     <div className="flex flex-col items-center gap-2 p-4">

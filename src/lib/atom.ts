@@ -52,3 +52,7 @@ export const languageAtom = atomWithStorage(
 )
 
 export const fontAtom = atom('Inter_Variable')
+
+export const kitsuneShowAtom = atom(false)
+
+export const loadedImagesAtom = atom<string[]>([])

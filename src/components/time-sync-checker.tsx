@@ -43,7 +43,8 @@ const TimeSyncChecker = () => {
 
   return (
     <div
-      className={`max-w-xl mx-auto mt-4 p-4 bg-neutral-900/80 rounded-lg shadow-lg font-["${font}"]`}
+      className={`max-w-xl mx-auto mt-4 p-4 bg-neutral-900/95 rounded-lg shadow-lg`}
+      style={{ fontFamily: font }}
     >
       {timeQuery.data ? (
         <motion.div style={{ opacity: 0 }} animate={{ opacity: 1 }}>

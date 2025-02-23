@@ -57,14 +57,17 @@
     U+2215, U+FEFF, U+FFFD;
 }
 
-/* noto-sans-jp-japanese-wght-normal */
+/* murecho-japanese-400-normal */
 @font-face {
-  font-family: 'Noto Sans JP Variable';
+  font-family: 'Murecho';
   font-style: normal;
   font-display: swap;
-  font-weight: 100 900;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-jp:vf@latest/japanese-wght-normal.woff2)
-    format('woff2-variations');
+  font-weight: 400;
+  src:
+    url(https://cdn.jsdelivr.net/fontsource/fonts/murecho@latest/japanese-400-normal.woff2)
+      format('woff2'),
+    url(https://cdn.jsdelivr.net/fontsource/fonts/murecho@latest/japanese-400-normal.woff)
+      format('woff');
 }
 
 .glow-yellow {

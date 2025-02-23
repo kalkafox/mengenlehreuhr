@@ -88,13 +88,6 @@ const Toolbar = () => {
 
   useEffect(() => {
     i18n.changeLanguage(language)
-    setFont(
-      language === 'ko'
-        ? 'Noto_Sans_KR_Variable'
-        : language === 'ja'
-          ? 'Noto_Sans_JP_Variable'
-          : 'Inter_Variable'
-    )
   }, [language, i18n, setFont])
 
   return (
@@ -155,7 +148,7 @@ const Toolbar = () => {
               </motion.div>
             ) : null}
           </PopoverTrigger>
-          <PopoverContent className="w-auto">
+          <PopoverContent className="w-auto" style={{ fontFamily: font }}>
             <div className="flex flex-col items-center gap-1">
               <TimezoneCombobox />
               {t('toolbar.hour')}: {time.hour}
@@ -353,12 +346,12 @@ const Toolbar = () => {
         {isTouchDevice() ? (
           <motion.div
             ref={tapRef}
-            style={{ y: 30 }}
+            style={{ y: 30, fontFamily: font }}
             animate={{
               y: tapRegistered ? 40 : 30,
               opacity: tapRegistered ? 0 : 1,
             }}
-            className={`absolute text-lg font-["${font}"]`}
+            className={`absolute text-lg`}
           >
             {t('toolbar.touch.info')}
           </motion.div>
@@ -374,7 +367,7 @@ const InfoSection = () => {
 
   return (
     <>
-      <h1 className={`font-["${font}"] text-lg font-bold`}>
+      <h1 style={{ fontFamily: font }} className={`text-lg font-bold`}>
         <Trans i18nKey="toolbar.whatisthis.title" />
       </h1>
       <Separator />
